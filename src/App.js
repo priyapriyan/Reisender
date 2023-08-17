@@ -599,9 +599,9 @@ const options = {
 };
 
 const topLocations = [
-  { name: "Milano, Italy", value: "Milano/Italy" },
-  { name: "Paris, France", value: "Paris/France" },
-  { name: "Los Angeles, CA", value: "Los Angeles/California" },
+  { name: "Chennai, India", value: "Chennai/India" },
+  { name: "Bangalore, India", value: "Bangalore/India" },
+  { name: "Madurai, India", value: "Los Madurai/India" },
   // add more top locations as needed
 ];
 
