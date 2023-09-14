@@ -814,10 +814,10 @@ const AITravelPlanner = () => {
         />
         <Panel>
           <FormContainer onSubmit={handleSubmit}>
-            <Label htmlFor="destinationCountry">Destination Country</Label>
+            <Label htmlFor="destinationCountry">Age </Label>
             <Input
               type="text"
-              placeholder="e.g. San Francisco/USA, Paris/France, Istanbul/Turkey, etc."
+              placeholder="Select the age group"
               id="destinationCountry"
               name="destinationCountry"
               value={values.destinationCountry}
@@ -825,7 +825,7 @@ const AITravelPlanner = () => {
               required
             />
             <TopLocationContainer>
-              <Label htmlFor="topDestinations">🔥Top Destionations:</Label>
+              <Label htmlFor="topDestinations">Select the Age Group </Label>
               {topLocations.map((location) => (
                 <PinButton
                   key={location.value}
@@ -835,53 +835,7 @@ const AITravelPlanner = () => {
                 </PinButton>
               ))}
             </TopLocationContainer>
-            <FormRow>
-              <FormGroup>
-                <Label htmlFor="budget">
-                  Budget
-                  <p
-                    style={{
-                      display: "inline-block",
-                      color: "#666",
-                      fontSize: "10px",
-                    }}
-                  >
-                    (with currency)
-                  </p>
-                </Label>
-                <Input
-                  type="text"
-                  placeholder="e.g. $1000 USD, 1000 EUR, etc."
-                  id="budget"
-                  name="budget"
-                  value={values.budget}
-                  onChange={handleChange}
-                  required
-                />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="tripDuration">
-                  Trip Duration
-                  <p
-                    style={{
-                      display: "inline-block",
-                      color: "#666",
-                      fontSize: "10px",
-                    }}
-                  >
-                    (in days)
-                  </p>
-                </Label>
-                <Input
-                  type="number"
-                  id="tripDuration"
-                  name="tripDuration"
-                  value={values.tripDuration}
-                  onChange={handleChange}
-                  required
-                />
-              </FormGroup>
-            </FormRow>
+        
             <Label htmlFor="interests">Interests</Label>
             <InterestsContainerNew>
               {options.interestsNew.map((interest, index) => (
@@ -921,6 +875,7 @@ const AITravelPlanner = () => {
               </FormGroup>
 
               
+              
               <FormGroup>
                 <Label htmlFor="travelStyle">Diet Type</Label>
                 <Select
@@ -938,54 +893,10 @@ const AITravelPlanner = () => {
               </FormGroup>
             </FormRow>
 
-            <Label htmlFor="transportationType">
-              Transportation Type
-              <p
-                style={{
-                  display: "inline-block",
-                  fontSize: "10px",
+            
 
-                  color: "#666",
-                }}
-              >
-                (e.g. car, train, bus, etc.)
-              </p>
-            </Label>
-            <Input
-              type="text"
-              id="transportationType"
-              name="transportationType"
-              value={values.transportationType}
-              onChange={handleChange}
-              required
-            />
-
-            <Label htmlFor="activityType">
-              Activity Type
-              <p
-                style={{
-                  display: "inline-block",
-                  fontSize: "10px",
-
-                  color: "#666",
-                }}
-              >
-                (select multiple options)
-              </p>
-            </Label>
-            <Select
-              id="activityType"
-              name="activityType"
-              multiple
-              value={values.activityType}
-              onChange={handleMultiSelectChange}
-            >
-              {options.activityTypes.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </Select>
+           
+                
             <Label htmlFor="cuisineType">Cuisine Type</Label>
             <CuisineTypesContainer>
               {options.cuisineTypes.map((cuisineType) => (
