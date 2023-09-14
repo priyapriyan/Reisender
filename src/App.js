@@ -302,7 +302,7 @@ const PinButton = styled.div`
   border: 1px solid transparent;
 
   &::before {
-    content: "📍";
+    content: "";
     margin-right: 4px;
     left: 8px;
     top: 8px;
@@ -387,9 +387,7 @@ const InterestName = styled.span`
   margin-right: 6px;
 `;
 
-const InterestEmoji = styled.span`
-  font-size: 16px;
-`;
+
 
 const Panel = styled.div`
   display: flex;
@@ -536,27 +534,24 @@ const options = {
 
   languages: [
     { value: "en", label: "English", icon: "🇺🇸" },
-    { value: "tr", label: "Türkçe", icon: "🇹🇷" },
-    { value: "fr", label: "Français", icon: "🇫🇷" },
-    { value: "es", label: "Español", icon: "🇪🇸" },
-    { value: "de", label: "Deutsch", icon: "🇩🇪" },
-    { value: "it", label: "Italiano", icon: "🇮🇹" },
-    { value: "pt", label: "Português", icon: "🇵🇹" },
-    { value: "ru", label: "Русский", icon: "🇷🇺" },
-    { value: "ja", label: "日本語", icon: "🇯🇵" },
+   
   ],
 };
 
 const topLocations = [
-  { name: "Chennai, India", value: "Chennai/India" },
-  { name: "Bangalore, India", value: "Bangalore/India" },
-  { name: "Madurai, India", value: "Los Madurai/India" },
+  { name: "18-25", value: "18-25" },
+  { name: "26-35", value: "26-35" },
+  { name: "36-45", value: "36-45" },
+  { name: "46-55", value: "46-55" },
+  { name: "55 & above", value: "56 & above" },
+
+
+
   // add more top locations as needed
 ];
 
 const defaultValues = {
   destinationCountry: "",
-  budget: "250 USD",
   travelStyle: options.travelStyles[0],
   interestsNew: [],
   accommodationType: options.accommodationTypes[0],
@@ -849,10 +844,7 @@ const AITravelPlanner = () => {
                   }}
                   value={interest}
                 >
-                  <InterestEmoji aria-label="emoji">
-                    {interest.emoji}
-                  </InterestEmoji>
-                  <InterestName>{interest.name}</InterestName>
+               <InterestName>{interest.name}</InterestName>
                 </InterestItemNew>
               ))}
             </InterestsContainerNew>
