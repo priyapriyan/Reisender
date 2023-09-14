@@ -454,76 +454,25 @@ const CuisineType = styled.div`
   }
 `;
 
-const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem;
-`;
 
-const Info = styled.div`
-  margin: 1rem;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  background-color: #333;
-`;
 
-const InfoTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #fff;
-`;
 
-const InfoText = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-`;
+
 
 // Lead form will remove later on
 
-const LeadForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
-const LeadInput = styled.input`
-  padding: 0.5rem;
-  border-radius: 0.5rem 0 0 0.5rem;
-  border: 2px solid #ccc;
-  font-size: 1.2rem;
-  width: 20rem;
-  margin-bottom: 1rem;
-`;
 
-const LeadButton = styled.button`
-  padding: 0.5rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
-  border-radius: 0.5rem;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
 
-  &:hover {
-    background-color: #0069d9;
-  }
-`;
 
 const options = {
   travelStyles: [
-    "Cultural",
-    "Adventure",
-    "Relaxation",
-    "Beach",
-    "City Break",
-    "Road Trip",
-    "Wildlife Safari",
-    "Ski",
+    "Vegetarian",
+    "Vegan",
+    "Paleo Diet",
+    "Low Carb Diet",
+    "Low Fat Diet",
+    "Intermitten Fasting",
   ],
   interestsNew: [
     { name: "History", emoji: "🏛️" },
@@ -550,14 +499,14 @@ const options = {
   ],
 
   accommodationTypes: [
-    "Hotel",
-    "Boutique Hotel",
-    "Hostel",
-    "Resort",
-    "Vacation Rental",
-    "Camping",
-    "Homestay",
-    "Bed and Breakfast",
+    "Weight Management",
+    "Heart Health",
+    "Blood Sugar Control",
+    "Digestive Health",
+    "HyperTension Management",
+    "Food Allergies",
+    "Cholestral Management",
+    "Diabetes",
   ],
   activityTypes: [
     "Outdoor",
@@ -620,8 +569,8 @@ const defaultValues = {
 
 const Main = ({ loading, response, handleSubmit, handleChange, email }) => (
   <MainContent>
-    <Title>⭐️ Travel Planner ⭐️</Title>
-    {!response && <Subtitle>Fill the form to generate your itinerary</Subtitle>}
+    <Title>AI Diet Plan</Title>
+    {!response && <Subtitle>Fill the form to generate your Meal Plan</Subtitle>}
 
     <ResponseContainer>
       {loading ? <Loading /> : response && <ResponseData response={response} />}
@@ -956,7 +905,7 @@ const AITravelPlanner = () => {
 
             <FormRow>
               <FormGroup>
-                <Label htmlFor="accommodationType">Accommodation</Label>
+                <Label htmlFor="accommodationType">Health Goal</Label>
                 <Select
                   id="accommodationType"
                   name="accommodationType"
@@ -970,8 +919,10 @@ const AITravelPlanner = () => {
                   ))}
                 </Select>
               </FormGroup>
+
+              
               <FormGroup>
-                <Label htmlFor="travelStyle">Travel Style</Label>
+                <Label htmlFor="travelStyle">Diet Type</Label>
                 <Select
                   id="travelStyle"
                   name="travelStyle"
